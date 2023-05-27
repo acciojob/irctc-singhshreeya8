@@ -1,5 +1,7 @@
 package com.driver.controllers;
 
+
+
 import com.driver.EntryDto.AddTrainEntryDto;
 import com.driver.EntryDto.SeatAvailabilityEntryDto;
 import com.driver.model.Station;
@@ -66,7 +68,7 @@ public class TrainController {
     @GetMapping("get-list-of-trains-arriving-in-a-range-of-time")
     public List<Integer> calculateListOfTrainIdsAtAStationInAParticularTimeRange(@RequestParam("station")Station station,
                                                                                  @RequestParam("startTime")LocalTime startTime
-                                                                                 ,@RequestParam("endTime")LocalTime endTime){
+            ,@RequestParam("endTime")LocalTime endTime){
 
         return trainService.trainsBetweenAGivenTime(station,startTime,endTime);
     }
